@@ -16,6 +16,12 @@ const cartSchema = new Schema({
                 ref: "Product",
             },
         ],
+        createdAt: Number,
+        updatedAt:Number,
+    
+    },
+    {
+        timestamps: true
     }
 )
 

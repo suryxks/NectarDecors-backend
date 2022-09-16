@@ -27,9 +27,15 @@ const UserSchema = new Schema({
     email: {
         type: String,
         required:true,
-    }
+    },
+    createdAt: Number,
+    updatedAt:Number,
 
-})
+},
+    {
+        timestamps: true
+    }
+)
 UserSchema.pre("save", async function (next) {
     const salt = await bcrypt.genSalt();
     this.password = await bcrypt.hash(this.password, salt);

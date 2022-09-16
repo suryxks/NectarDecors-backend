@@ -9,10 +9,6 @@ const findUserByEmail = async (email) => {
     return user;
 }
 const createUser = async(userDetails) => {
-    const user = await findUserByEmail(userDetails.email);
-    if (user) {
-      return 409
-    }
     const createdUser = await User.create(userDetails);
     return createdUser;
 }

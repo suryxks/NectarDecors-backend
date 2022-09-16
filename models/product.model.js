@@ -13,7 +13,14 @@ const productSchema = new Shema({
     featured: Boolean,
     rating:String,
     imageUrl:String,
-})
+    createdAt: Number,
+    updatedAt:Number,
+
+},
+    {
+        timestamps: true
+    }
+)
 
 const Product = mongoose.model('Product', productSchema);
 
